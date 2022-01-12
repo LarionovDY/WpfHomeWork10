@@ -1,0 +1,244 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1000" Background="Wheat">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Control.Height" Value="60"/>
+                <Setter Property="Control.Width" Value="60"/>
+                <Setter Property="Control.BorderBrush" Value="White"/>
+                <Setter Property="Control.BorderThickness" Value="2"/>
+                <Setter Property="Control.Margin" Value="5"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Control.IsMouseOver" Value="True"/>
+                        <Condition Property="Control.IsFocused" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="Control.Height" Value="80"/>
+                        <Setter Property="Control.Width" Value="80"/>
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Margin="30">
+
+            <Border BorderBrush="AntiqueWhite" BorderThickness="5" Opacity="0.6"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="20" ShadowDepth="10"
+                                  Opacity="0.4"/>
+                </Border.Effect>
+                <Image Source="Data/4.jpg" Height="200" Width="200" x:Name="Album"/>
+            </Border>
+            <Border Height="80" Width="210" BorderBrush="AntiqueWhite" BorderThickness="5"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Opacity="0.3">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="20" ShadowDepth="10"
+                                  Opacity="0.4"/>
+                </Border.Effect>
+                <Border.Background>
+                    <VisualBrush Visual="{Binding ElementName=Album}">
+                        <VisualBrush.Transform>
+                            <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
+                            </ScaleTransform>
+                        </VisualBrush.Transform>
+                    </VisualBrush>
+                </Border.Background>
+                <Border.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="Black"></GradientStop>
+                        <GradientStop Offset="0.7" Color="Transparent"></GradientStop>
+                    </LinearGradientBrush>
+                </Border.OpacityMask>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <StackPanel Orientation="Vertical" Margin="0,0,50,0">
+
+                    <Border BorderBrush="AntiqueWhite" BorderThickness="3" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        Height="150" Width="150" Opacity="0.6" Margin="10">                        
+                        <Border.Background>
+                            <VisualBrush Visual="{Binding ElementName=Album}">
+                                <VisualBrush.Transform>
+                                    <TranslateTransform X="0" Y="0">
+                                    </TranslateTransform>
+                                </VisualBrush.Transform>
+                            </VisualBrush>
+                        </Border.Background>
+                        <Border.RenderTransform>
+                            <SkewTransform CenterX="150" CenterY="150" AngleX="0" AngleY="-15"/>
+                        </Border.RenderTransform>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
+                                  Opacity="0.4"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border Height="80" Width="150" BorderBrush="AntiqueWhite" BorderThickness="3"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6">
+                        <Border.Background>
+                            <VisualBrush Visual="{Binding ElementName=Album}">
+                                <VisualBrush.Transform>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
+                                    </ScaleTransform>
+                                </VisualBrush.Transform>
+                            </VisualBrush>
+                        </Border.Background>
+                        <Border.OpacityMask>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="Black"></GradientStop>
+                                <GradientStop Offset="0.75" Color="Transparent"></GradientStop>
+                            </LinearGradientBrush>
+                        </Border.OpacityMask>
+                        <Border.RenderTransform>
+                            <SkewTransform CenterX="150" CenterY="0" AngleX="15" AngleY="-15"/>
+                        </Border.RenderTransform>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
+                                  Opacity="0.4"/>
+                        </Border.Effect>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="50,0,50,0">
+
+                    <Border BorderBrush="AntiqueWhite" BorderThickness="3" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        Height="150" Width="150" Margin="10" Opacity="0.6">
+                        <Border.Background>
+                            <VisualBrush Visual="{Binding ElementName=Album}"/>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
+                                  Opacity="0.4"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border Height="80" Width="150" BorderBrush="AntiqueWhite" BorderThickness="3"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6">
+                        <Border.Background>
+                            <VisualBrush Visual="{Binding ElementName=Album}">
+                                <VisualBrush.Transform>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
+                                    </ScaleTransform>
+                                </VisualBrush.Transform>
+                            </VisualBrush>
+                        </Border.Background>
+                        <Border.OpacityMask>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="Black"></GradientStop>
+                                <GradientStop Offset="0.75" Color="Transparent"></GradientStop>
+                            </LinearGradientBrush>
+                        </Border.OpacityMask>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
+                                  Opacity="0.4"/>
+                        </Border.Effect>
+                    </Border>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="50,0,0,0">
+
+                    <Border BorderBrush="AntiqueWhite" BorderThickness="3" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        Height="150" Width="150" Opacity="0.6" Margin="10">
+                        <Border.Background>
+                            <VisualBrush Visual="{Binding ElementName=Album}"/>
+                        </Border.Background>                        
+                        <Border.RenderTransform>
+                            <SkewTransform AngleX="0" AngleY="15"/>
+                        </Border.RenderTransform>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
+                                  Opacity="0.4"/>
+                        </Border.Effect>
+                    </Border>
+
+                    <Border Height="80" Width="150" BorderBrush="AntiqueWhite" BorderThickness="3"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6">
+                        <Border.Background>
+                            <VisualBrush Visual="{Binding ElementName=Album}">
+                                <VisualBrush.Transform>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
+                                    </ScaleTransform>
+                                </VisualBrush.Transform>
+                            </VisualBrush>
+                        </Border.Background>
+                        <Border.OpacityMask>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="Black"></GradientStop>
+                                <GradientStop Offset="0.75" Color="Transparent"></GradientStop>
+                            </LinearGradientBrush>
+                        </Border.OpacityMask>
+                        <Border.RenderTransform>
+                            <SkewTransform CenterX="0" CenterY="0" AngleX="-15" AngleY="15"/>
+                        </Border.RenderTransform>
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
+                                  Opacity="0.4"/>
+                        </Border.Effect>
+                    </Border>
+                    
+                </StackPanel>
+
+            </StackPanel>
+            
+        </StackPanel>
+        <Grid Grid.Row="1" Background="CadetBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ToolBar Grid.Column="1" Background="LightSeaGreen" Margin="10">
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/1.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/2.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/3.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/4.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/5.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/6.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/7.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/8.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/9.jpg"/>
+                </Button>
+                <Button Style="{StaticResource ButtonStyle}">
+                    <Image Source="Data/10.jpg"/>
+                </Button>
+            </ToolBar>
+        </Grid>
+    </Grid>
+</Window>
