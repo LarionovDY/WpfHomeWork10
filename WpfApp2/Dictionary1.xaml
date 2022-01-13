@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ButtonStyle">
+        <Style.Setters>
+            <Setter Property="Control.Height" Value="60"/>
+            <Setter Property="Control.Width" Value="60"/>
+            <Setter Property="Control.BorderBrush" Value="White"/>
+            <Setter Property="Control.BorderThickness" Value="2"/>
+            <Setter Property="Control.Margin" Value="5"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Control.IsMouseOver" Value="True"/>
+                    <Condition Property="Control.IsFocused" Value="True"/>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Control.Height" Value="80"/>
+                    <Setter Property="Control.Width" Value="80"/>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

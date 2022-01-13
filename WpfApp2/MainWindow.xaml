@@ -6,29 +6,19 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1000" Background="Wheat">
-    <Window.Resources>
-        <Style x:Key="ButtonStyle">
-            <Style.Setters>
-                <Setter Property="Control.Height" Value="60"/>
-                <Setter Property="Control.Width" Value="60"/>
-                <Setter Property="Control.BorderBrush" Value="White"/>
-                <Setter Property="Control.BorderThickness" Value="2"/>
-                <Setter Property="Control.Margin" Value="5"/>
-            </Style.Setters>
-            <Style.Triggers>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="Control.IsMouseOver" Value="True"/>
-                        <Condition Property="Control.IsFocused" Value="True"/>
-                    </MultiTrigger.Conditions>
-                    <MultiTrigger.Setters>
-                        <Setter Property="Control.Height" Value="80"/>
-                        <Setter Property="Control.Width" Value="80"/>
-                    </MultiTrigger.Setters>
-                </MultiTrigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MyCommands.Button1Click" Executed="Button1ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button2Click" Executed="Button2ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button3Click" Executed="Button3ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button4Click" Executed="Button4ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button5Click" Executed="Button5ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button6Click" Executed="Button6ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button7Click" Executed="Button7ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button8Click" Executed="Button8ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button9Click" Executed="Button9ClickExecuted"/>
+        <CommandBinding Command="local:MyCommands.Button10Click" Executed="Button10ClickExecuted"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
@@ -37,12 +27,12 @@
         <StackPanel Orientation="Vertical" Margin="30">
 
             <Border BorderBrush="AntiqueWhite" BorderThickness="5" Opacity="0.6"
-                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" x:Name="borderImage">
                 <Border.Effect>
                     <DropShadowEffect Color="Black" Direction="20" ShadowDepth="10"
                                   Opacity="0.4"/>
                 </Border.Effect>
-                <Image Source="Data/4.jpg" Height="200" Width="200" x:Name="Album"/>
+                <Image Source="Data/_4.jpg" Height="200" Width="200" x:Name="album"/>
             </Border>
             <Border Height="80" Width="210" BorderBrush="AntiqueWhite" BorderThickness="5"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Opacity="0.3">
@@ -51,7 +41,7 @@
                                   Opacity="0.4"/>
                 </Border.Effect>
                 <Border.Background>
-                    <VisualBrush Visual="{Binding ElementName=Album}">
+                    <VisualBrush Visual="{Binding ElementName=album}">
                         <VisualBrush.Transform>
                             <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
                             </ScaleTransform>
@@ -74,7 +64,7 @@
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                         Height="150" Width="150" Opacity="0.6" Margin="10">                        
                         <Border.Background>
-                            <VisualBrush Visual="{Binding ElementName=Album}">
+                            <VisualBrush Visual="{Binding ElementName=album}">
                                 <VisualBrush.Transform>
                                     <TranslateTransform X="0" Y="0">
                                     </TranslateTransform>
@@ -93,7 +83,7 @@
                     <Border Height="80" Width="150" BorderBrush="AntiqueWhite" BorderThickness="3"
                             HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6">
                         <Border.Background>
-                            <VisualBrush Visual="{Binding ElementName=Album}">
+                            <VisualBrush Visual="{Binding ElementName=album}">
                                 <VisualBrush.Transform>
                                     <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
                                     </ScaleTransform>
@@ -122,7 +112,7 @@
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                         Height="150" Width="150" Margin="10" Opacity="0.6">
                         <Border.Background>
-                            <VisualBrush Visual="{Binding ElementName=Album}"/>
+                            <VisualBrush Visual="{Binding ElementName=album}"/>
                         </Border.Background>
                         <Border.Effect>
                             <DropShadowEffect Color="Black" Direction="40" ShadowDepth="20"
@@ -133,7 +123,7 @@
                     <Border Height="80" Width="150" BorderBrush="AntiqueWhite" BorderThickness="3"
                             HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6">
                         <Border.Background>
-                            <VisualBrush Visual="{Binding ElementName=Album}">
+                            <VisualBrush Visual="{Binding ElementName=album}">
                                 <VisualBrush.Transform>
                                     <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
                                     </ScaleTransform>
@@ -160,7 +150,7 @@
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
                         Height="150" Width="150" Opacity="0.6" Margin="10">
                         <Border.Background>
-                            <VisualBrush Visual="{Binding ElementName=Album}"/>
+                            <VisualBrush Visual="{Binding ElementName=album}"/>
                         </Border.Background>                        
                         <Border.RenderTransform>
                             <SkewTransform AngleX="0" AngleY="15"/>
@@ -174,7 +164,7 @@
                     <Border Height="80" Width="150" BorderBrush="AntiqueWhite" BorderThickness="3"
                             HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6">
                         <Border.Background>
-                            <VisualBrush Visual="{Binding ElementName=Album}">
+                            <VisualBrush Visual="{Binding ElementName=album}">
                                 <VisualBrush.Transform>
                                     <ScaleTransform ScaleX="1" ScaleY="-1" CenterX="75" CenterY="40">
                                     </ScaleTransform>
@@ -208,35 +198,35 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <ToolBar Grid.Column="1" Background="LightSeaGreen" Margin="10">
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/1.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button1Click">
+                    <Image Source="Data/_1.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/2.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button2Click">
+                    <Image Source="Data/_2.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/3.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button3Click">
+                    <Image Source="Data/_3.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/4.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button4Click">
+                    <Image Source="Data/_4.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/5.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button5Click">
+                    <Image Source="Data/_5.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/6.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button6Click">
+                    <Image Source="Data/_6.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/7.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button7Click">
+                    <Image Source="Data/_7.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/8.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button8Click">
+                    <Image Source="Data/_8.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/9.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button9Click">
+                    <Image Source="Data/_9.jpg"/>
                 </Button>
-                <Button Style="{StaticResource ButtonStyle}">
-                    <Image Source="Data/10.jpg"/>
+                <Button Style="{StaticResource ButtonStyle}" Command="local:MyCommands.Button10Click">
+                    <Image Source="Data/_10.jpg"/>
                 </Button>
             </ToolBar>
         </Grid>

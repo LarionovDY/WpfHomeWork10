@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MyCommands.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,18 +99,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Data\1.jpg" />
-    <Resource Include="Data\10.jpg" />
-    <Resource Include="Data\2.jpg" />
-    <Resource Include="Data\3.jpg" />
-    <Resource Include="Data\4.jpg" />
-    <Resource Include="Data\5.jpg" />
-    <Resource Include="Data\6.jpg" />
-    <Resource Include="Data\7.jpg" />
-    <Resource Include="Data\8.jpg" />
-    <Resource Include="Data\9.jpg" />
+    <Resource Include="Data\_1.jpg" />
+    <Resource Include="Data\_10.jpg" />
+    <Resource Include="Data\_2.jpg" />
+    <Resource Include="Data\_3.jpg" />
+    <Resource Include="Data\_4.jpg" />
+    <Resource Include="Data\_5.jpg" />
+    <Resource Include="Data\_6.jpg" />
+    <Resource Include="Data\_7.jpg" />
+    <Resource Include="Data\_8.jpg" />
+    <Resource Include="Data\_9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
